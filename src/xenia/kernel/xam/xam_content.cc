@@ -43,7 +43,7 @@ static const DeviceInfo dummy_device_info_ = {
     L"Dummy HDD",
 };
 #undef ONE_GB
-
+SHIM_SET_MEM_32(mask_ptr, 0); to SHIM_SET_MEM_32(mask_ptr, 0xFFFFFFFF); 
 dword_result_t XamContentGetLicenseMask(lpdword_t mask_ptr,
                                         lpunknown_t overlapped_ptr) {
   // Each bit in the mask represents a granted license. Available licenses
